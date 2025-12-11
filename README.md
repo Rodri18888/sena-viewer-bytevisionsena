@@ -59,13 +59,13 @@ Un IDE o editor compatible (IntelliJ, Eclipse, VSCode)
 Git (opcional)
 
 ### 2. Clonar el repositorio
-git clone https://github.com/usuario/bytevisionsena.git
+git clone https://github.com/Rodri18888/sena-viewer-bytevisionsena.git
 
 ### 3. Compilar el proyecto
 
 Si usas terminal:
 
-cd bytevisionsena/src
+cd sena-viewer-bytevisionsena/src
 javac edu/misena/Main.java
 
 ### 4. Ejecutar la aplicación
