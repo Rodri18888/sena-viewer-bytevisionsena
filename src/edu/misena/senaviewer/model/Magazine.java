@@ -1,16 +1,14 @@
 package edu.misena.senaviewer.model;
 
-import java.util.Date; 
-
 public class Magazine extends Publication {
     
     // Atributo específico
     private int editionNumber;
 
     // Constructor que llama al constructor de Publication
-    public Magazine(String title, Date editDate, String author, int editionNumber) {
+    public Magazine(String title, String editionDate, String author, int editionNumber) {
         // Llama a super
-        super(title, editDate, author); 
+        super(title, editionDate, author); 
         this.editionNumber = editionNumber;
     }
     

@@ -5,13 +5,13 @@ import java.util.List;
 public class Publication {
 
     protected String title;               
-    protected String edititionDate;        
+    protected String editionDate;        
     protected String editorial;           
     protected List<String> authors;       
 
-    public Publication(String title, String edititionDate, String editorial) {
+    public Publication(String title, String editionDate, String editorial) {
         this.title = title;
-        this.edititionDate = edititionDate;
+        this.editionDate = editionDate;
         this.editorial = editorial;
         this.authors = new ArrayList<>();
     }
@@ -24,12 +24,12 @@ public class Publication {
         this.title = title;
     }
 
-    public String getEdititionDate() {
-        return edititionDate;
+    public String getEditionDate() {
+        return editionDate;
     }
 
     public void setEdititionDate(String edititionDate) {
-        this.edititionDate = edititionDate;
+        this.editionDate = edititionDate;
     }
 
     public String getEditorial() {

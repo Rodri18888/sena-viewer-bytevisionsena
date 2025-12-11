@@ -1,7 +1,5 @@
 package edu.misena.senaviewer.model;
 
-import java.util.Date; 
-
 public class Book extends Publication {
     
     // Atributos específicos
@@ -10,8 +8,8 @@ public class Book extends Publication {
 
     // Constructor que llama al constructor de Publication
     // (Ajusta los parámetros de super() según lo que pida la clase del líder)
-    public Book(String title, Date editDate, String author, int isbn, int pages) {
-        super(title, editDate, author); 
+    public Book(String title, String editionDate, String author, int isbn, int pages) {
+        super(title, editionDate, author); 
         this.isbn = isbn;
         this.pages = pages;
     }

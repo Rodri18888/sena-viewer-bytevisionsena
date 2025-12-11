@@ -1,43 +1,29 @@
 package edu.misena.senaviewer.model;
 
-import java.util.ArrayList;
+public class Serie extends Film {
 
-public class Serie {
+    private int timeViewed;      // Tiempo total visto en minutos
+    private int sessionQuantity; // Número total de temporadas
 
-    private String title;
-    private String director;
-    private int year;
-    private ArrayList<Chapter> chapters;
-
-    public Serie(String title, String director, int year) {
-        this.title = title;
-        this.director = director;
-        this.year = year;
-        this.chapters = new ArrayList<>();
+    public Serie(String title, String genre, int duration) {
+        super(title, genre, null, duration); 
+        this.timeViewed = 0;
+        this.sessionQuantity = 0;
     }
 
-    public String getTitle() {
-        return title;
+    public int getTimeViewed() {
+        return timeViewed;
     }
 
-    public String getDirector() {
-        return director;
+    public void setTimeViewed(int timeViewed) {
+        this.timeViewed = timeViewed;
     }
 
-    public int getYear() {
-        return year;
+    public int getSessionQuantity() {
+        return sessionQuantity;
     }
 
-    public void addChapter(Chapter chapter) {
-        chapters.add(chapter);
-    }
-
-    public ArrayList<Chapter> getChapters() {
-        return chapters;
-    }
-
-    @Override
-    public String toString() {
-        return "Serie: " + title + " (" + year + ")";
+    public void setSessionQuantity(int sessionQuantity) {
+        this.sessionQuantity = sessionQuantity;
     }
 }
