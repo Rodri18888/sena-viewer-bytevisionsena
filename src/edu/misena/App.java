@@ -2,7 +2,6 @@ package edu.misena;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import edu.misena.senaviewer.model.Movie;
 import edu.misena.senaviewer.model.Serie;
@@ -10,7 +9,6 @@ import edu.misena.senaviewer.model.Chapter;
 
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         // ========================
         // Lista de películas
@@ -45,85 +43,18 @@ public class App {
         }
 
         // ========================
-        // Menú principal
+        // Pruebas básicas
         // ========================
-        int opcion;
-        do {
-            System.out.println("\n=== SENA VIEWER ===");
-            System.out.println("1. Listar películas");
-            System.out.println("2. Listar series");
-            System.out.println("3. Reproducir película");
-            System.out.println("4. Reproducir capítulo de serie");
-            System.out.println("0. Salir");
-            System.out.print("Seleccione una opción: ");
-            opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+        // Marcar la primera película como vista
+        Movie firstMovie = movies.get(0);
+        System.out.println(firstMovie);
+        firstMovie.markAsViewed();
+        System.out.println("Visto: " + firstMovie.isViewed());
 
-            switch (opcion) {
-                case 1:
-                    System.out.println("\nPelículas disponibles:");
-                    for (int i = 0; i < movies.size(); i++) {
-                        System.out.println((i + 1) + ". " + movies.get(i));
-                    }
-                    break;
-
-                case 2:
-                    System.out.println("\nSeries disponibles:");
-                    for (int i = 0; i < series.size(); i++) {
-                        System.out.println((i + 1) + ". " + series.get(i));
-                    }
-                    break;
-
-                case 3:
-                    System.out.println("\nSeleccione la película a reproducir:");
-                    for (int i = 0; i < movies.size(); i++) {
-                        System.out.println((i + 1) + ". " + movies.get(i).getTitle());
-                    }
-                    int mIndex = sc.nextInt() - 1;
-                    if (mIndex >= 0 && mIndex < movies.size()) {
-                        Movie selectedMovie = movies.get(mIndex);
-                        selectedMovie.markAsViewed();
-                        System.out.println("Reproduciendo: " + selectedMovie.getTitle());
-                    } else {
-                        System.out.println("Opción inválida.");
-                    }
-                    break;
-
-                case 4:
-                    System.out.println("\nSeleccione la serie:");
-                    for (int i = 0; i < series.size(); i++) {
-                        System.out.println((i + 1) + ". " + series.get(i).getTitle());
-                    }
-                    int sIndex = sc.nextInt() - 1;
-                    if (sIndex >= 0 && sIndex < series.size()) {
-                        Serie selectedSerie = series.get(sIndex);
-                        System.out.println("Capítulos disponibles:");
-                        for (int i = 0; i < selectedSerie.getChapters().size(); i++) {
-                            System.out.println((i + 1) + ". " + selectedSerie.getChapters().get(i));
-                        }
-                        System.out.println("Seleccione capítulo a reproducir:");
-                        int cIndex = sc.nextInt() - 1;
-                        if (cIndex >= 0 && cIndex < selectedSerie.getChapters().size()) {
-                            System.out.println("Reproduciendo: " +
-                                    selectedSerie.getChapters().get(cIndex).toString());
-                        } else {
-                            System.out.println("Opción inválida.");
-                        }
-                    } else {
-                        System.out.println("Opción inválida.");
-                    }
-                    break;
-
-                case 0:
-                    System.out.println("Saliendo de SENA Viewer...");
-                    break;
-
-                default:
-                    System.out.println("Opción no válida.");
-            }
-
-        } while (opcion != 0);
-
-        sc.close();
+        // Marcar el primer capítulo de la primera serie como visto
+        Serie firstSerie = series.get(0);
+        Chapter firstChapter = firstSerie.getChapters().get(0);
+        System.out.println(firstSerie);
+        System.out.println(firstSerie.getChapters());
     }
 }

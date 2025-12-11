@@ -1,14 +1,31 @@
 package edu.misena.senaviewer.model;
 
-public class Chapter extends Film {
+public class Chapter {
 
+    private String title;
+    private String director;
+    private int year;
     private int duration;
     private boolean viewed;
 
     public Chapter(String title, String director, int year, int duration) {
-        super(title, director, year);
+        this.title = title;
+        this.director = director;
+        this.year = year;
         this.duration = duration;
         this.viewed = false;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getYear() {
+        return year;
     }
 
     public int getDuration() {
@@ -25,6 +42,6 @@ public class Chapter extends Film {
 
     @Override
     public String toString() {
-        return "Chapter: " + getTitle() + " (" + duration + " min)";
+        return "Chapter: " + title + " (" + duration + " min)";
     }
 }

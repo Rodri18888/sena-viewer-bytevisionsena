@@ -2,13 +2,30 @@ package edu.misena.senaviewer.model;
 
 import java.util.ArrayList;
 
-public class Serie extends Film {
+public class Serie {
 
+    private String title;
+    private String director;
+    private int year;
     private ArrayList<Chapter> chapters;
 
     public Serie(String title, String director, int year) {
-        super(title, director, year);
+        this.title = title;
+        this.director = director;
+        this.year = year;
         this.chapters = new ArrayList<>();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getYear() {
+        return year;
     }
 
     public void addChapter(Chapter chapter) {
@@ -21,6 +38,6 @@ public class Serie extends Film {
 
     @Override
     public String toString() {
-        return "Serie: " + getTitle() + " (" + getYear() + ")";
+        return "Serie: " + title + " (" + year + ")";
     }
 }
