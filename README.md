@@ -1,18 +1,115 @@
-## Getting Started
+# ByteVisionSENA
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Proyecto académico desarrollado como visor de contenido multimedia y publicaciones.
+Incluye gestión de películas, series, libros y revistas, además de un menú interactivo por consola.
 
-## Folder Structure
+## Integrantes del equipo y roles/responsabilidades
 
-The workspace contains two folders by default, where:
+Rodrigo: Desarrollador Implementación de las clases Film y Publication, creación del menú interactivo, carga de datos y manejo del repositorio.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Aly: Desarrollador Creación de las clases Movie, Serie y Chapter.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Cesar: Desarrollador Implementación de las clases Magazine y Book.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
+## Estructura del proyecto
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+bytevisionsena/
+│
+├── README.md
+├── src/
+│   └── edu/
+│       └── misena/
+│           ├── Main.java
+│           └── senaviewer/
+│               └── model/
+│                   ├── Film.java
+│                   ├── Movie.java
+│                   ├── Serie.java
+│                   ├── Chapter.java
+│                   ├── Publication.java
+│                   ├── Book.java
+│                   └── Magazine.java
+│
+└── recursos/
+    └── diagrama-clases.png
+
+## Diagrama de clases
+
+
+### Relaciones principales:
+
+Film (Clase padre)
+ ├── Movie
+ └── Serie
+
+Publication (Clase padre)
+ ├── Book
+ └── Magazine
+
+Chapter (Clase independiente)
+
+## Instrucciones para compilar y ejecutar
+### 1. Requisitos
+
+Java JDK 17 o superior
+
+Un IDE o editor compatible (IntelliJ, Eclipse, VSCode)
+
+Git (opcional)
+
+### 2. Clonar el repositorio
+git clone https://github.com/usuario/bytevisionsena.git
+
+### 3. Compilar el proyecto
+
+Si usas terminal:
+
+cd bytevisionsena/src
+javac edu/misena/Main.java
+
+### 4. Ejecutar la aplicación
+java edu.misena.Main
+
+## Demo del proyecto (Sprint Review)
+
+Flujo general del programa:
+
+Al iniciar se muestra el menú principal:
+
+1. Movies
+2. Series
+3. Books
+4. Magazines
+5. Report
+6. Report Today
+0. Exit
+
+
+## El usuario puede:
+
+Ver películas y marcarlas como vistas
+
+Ver series
+
+Listar libros
+
+Listar revistas
+
+Generar reportes generales
+
+Generar un reporte del día
+
+Después de cada acción la aplicación regresa al menú principal.
+
+Estado del proyecto
+
+Sprint 1 completado
+
+Clases creadas
+
+Herencia implementada
+
+Menú funcional
+
+Sprint 2 en desarrollo
